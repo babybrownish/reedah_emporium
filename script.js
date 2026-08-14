@@ -1,10 +1,6 @@
-const products=[
-  {name:'Lip Oil',price:2000,desc:'Lightweight moisture + shine.',kind:'oil'},
-  {name:'Lip Scrub',price:1500,desc:'Gentle care for soft lips.',kind:'scrub'},
-  {name:'Lip Liner',price:1750,desc:'Define and shape your lips.',kind:'liner'},
-  {name:'Lip Balm',price:1000,desc:'Simple everyday hydration.',kind:'balm'}
-];
-const shadeImages={Clear:'images/lip-gloss-clear.jpg',Nude:'images/lip-gloss-nude.jpg',Brown:'images/lip-gloss-brown.jpg',Pink:'images/lip-gloss-pink.jpg',Berry:'images/lip-gloss-berry.jpg'};
+const products=[{name:'Lip Oil',price:2000,desc:'Lightweight moisture + shine.',kind:'oil'},{name:'Lip Scrub',price:1500,desc:'Gentle care for soft lips.',kind:'scrub'},{name:'Lip Liner',price:1750,desc:'Define and shape your lips.',kind:'liner'},{name:'Lip Balm',price:1000,desc:'Simple everyday hydration.',kind:'balm'}];
+const base='reedah-emporiumextracted2/images/';
+const shadeImages={Clear:base+'lip-gloss-clear.jpg',Nude:base+'lip-gloss-nude.jpg',Brown:base+'lip-gloss-brown.jpg',Pink:base+'lip-gloss-pink.jpg',Berry:base+'lip-gloss-berry.jpg'};
 let selectedShade='Clear',cart=[];const naira=n=>`₦${n.toLocaleString()}`;
 function selectShade(shade){selectedShade=shade;document.getElementById('shadeSelect').value=shade;document.getElementById('selectedShade').textContent=shade;document.getElementById('shadeImage').src=shadeImages[shade];document.querySelectorAll('.thumb').forEach(btn=>btn.classList.toggle('active',btn.dataset.image===shadeImages[shade]));}
 function addGlossToCart(){addItem({name:"Reedah's Emporium — Lip Gloss",price:3000,desc:'Glossy, juicy everyday shine.',shade:selectedShade})}
