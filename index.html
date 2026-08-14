@@ -1,22 +1,39 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Reedah's — lip care and beauty essentials in Lagos." />
-  <title>Reedah's | Lip Care & Beauty</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reedah's Emporium — lip care and beauty essentials in Lagos.">
+  <title>Reedah's Emporium | Lip Gloss Shades</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="header"><a class="logo" href="#top">Reedah<span>'s</span></a><nav><a href="#shop">Shop</a><a href="#about">About</a><a href="#contact">Contact</a></nav><button class="cart-btn" onclick="openCart()">Bag <b id="cartCount">0</b></button></header>
+<header class="header">
+  <a class="logo" href="#top">Reedah<span>'s</span></a>
+  <nav><a href="#shop">Shop</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  <button class="cart-btn" onclick="openCart()">Bag <b id="cartCount">0</b></button>
+</header>
 <main id="top">
-<section class="hero"><div class="hero-copy"><p class="eyebrow">BEAUTY, YOUR WAY</p><h1>Soft lips.<br><em>Pretty energy.</em></h1><p class="hero-text">Everyday lip essentials made for the girl who wants her lips moisturised, glossy and effortlessly cute.</p><a class="primary" href="#shop">Shop the collection <span>→</span></a></div><div class="hero-art"><div class="blob blob-one"></div><div class="product-orb">Reedah's<br><small>LIP CARE</small></div></div></section>
-<section class="intro"><p>YOUR EVERYDAY LIP STAPLES</p><h2>Little things that make<br><em>a big difference.</em></h2></section>
-<section id="shop" class="shop"><div class="section-head"><div><p class="eyebrow">THE COLLECTION</p><h2>Shop Reedah's</h2></div><p>Pick your favourites and send your order straight to WhatsApp.</p></div><div class="grid" id="products"></div></section>
-<section id="about" class="about"><div><p class="eyebrow">WHY REEDAH'S</p><h2>Your lips,<br><em>but better.</em></h2></div><div class="about-copy"><p>Reedah's brings together simple, affordable lip-care essentials for everyday beauty routines.</p><div class="features"><span>♡ Everyday essentials</span><span>✦ Affordable beauty</span><span>♡ Lagos-based</span></div></div></section>
-<section id="contact" class="contact"><p class="eyebrow">READY TO ORDER?</p><h2>Let's make your<br><em>lip combo.</em></h2><a class="primary" href="https://wa.me/2348121757186" target="_blank" rel="noopener">Order on WhatsApp →</a><p class="contact-line">0812 175 7186 · faridatbukunmi@gmail.com · Lagos</p></section>
-</main><footer><span>Reedah's</span><span>© 2026 Reedah's. Made with love in Lagos.</span></footer>
+  <section class="hero"><div class="hero-copy"><p class="eyebrow">BEAUTY, YOUR WAY</p><h1>Soft lips.<br><em>Pretty energy.</em></h1><p class="hero-text">Everyday lip essentials made for the girl who wants her lips moisturised, glossy and effortlessly cute.</p><a class="primary" href="#shop">Shop the collection <span>→</span></a></div><div class="hero-photo"><img src="images/lip-gloss-collection-1.jpeg" alt="Reedah's Emporium lip gloss collection"></div></section>
+  <section class="intro"><p>YOUR EVERYDAY LIP STAPLES</p><h2>Little things that make<br><em>a big difference.</em></h2></section>
+  <section id="shop" class="shop"><div class="section-head"><div><p class="eyebrow">THE COLLECTION</p><h2>Shop Reedah's</h2></div><p>Choose a lip gloss shade, add it to your bag, and send your order straight to WhatsApp.</p></div>
+    <article class="featured-product"><div class="gallery"><div class="main-photo-wrap"><img id="shadeImage" src="images/lip-gloss-clear.jpg" alt="Selected Reedah's Emporium lip gloss shade"></div><div class="gallery-strip">
+      <button class="thumb active" data-image="images/lip-gloss-clear.jpg" onclick="selectShade('Clear')"><img src="images/lip-gloss-clear.jpg" alt="Clear shade"></button>
+      <button class="thumb" data-image="images/lip-gloss-nude.jpg" onclick="selectShade('Nude')"><img src="images/lip-gloss-nude.jpg" alt="Nude shade"></button>
+      <button class="thumb" data-image="images/lip-gloss-brown.jpg" onclick="selectShade('Brown')"><img src="images/lip-gloss-brown.jpg" alt="Brown shade"></button>
+      <button class="thumb" data-image="images/lip-gloss-pink.jpg" onclick="selectShade('Pink')"><img src="images/lip-gloss-pink.jpg" alt="Pink shade"></button>
+      <button class="thumb" data-image="images/lip-gloss-berry.jpg" onclick="selectShade('Berry')"><img src="images/lip-gloss-berry.jpg" alt="Berry shade"></button>
+    </div></div><div class="featured-copy"><p class="eyebrow">REEDAH'S EMPORIUM</p><h3>Reedah's Emporium — Lip Gloss Shades</h3><div class="price">₦3,000</div><p class="description">Glossy, juicy everyday shine. Select the shade you want below and the matching product photo will appear.</p><label class="label" for="shadeSelect">Choose your shade</label><select class="shade-select" id="shadeSelect" onchange="selectShade(this.value)"><option>Clear</option><option>Nude</option><option>Brown</option><option>Pink</option><option>Berry</option></select><div class="selected-shade">Selected shade: <strong id="selectedShade">Clear</strong></div><button class="add large" onclick="addGlossToCart()">Add selected shade to bag</button></div></article>
+    <div class="grid" id="products"></div>
+  </section>
+  <section id="about" class="about"><div><p class="eyebrow">WHY REEDAH'S</p><h2>Your lips,<br><em>but better.</em></h2></div><div class="about-copy"><p>Reedah's brings together simple, affordable lip-care essentials for everyday beauty routines.</p><div class="features"><span>♡ Everyday essentials</span><span>✦ Affordable beauty</span><span>♡ Lagos-based</span></div></div></section>
+  <section id="contact" class="contact"><p class="eyebrow">READY TO ORDER?</p><h2>Let's make your<br><em>lip combo.</em></h2><a class="primary" href="https://wa.me/2348121757186" target="_blank" rel="noopener">Order on WhatsApp →</a><p class="contact-line">0812 175 7186 · faridatbukunmi@gmail.com · Lagos</p></section>
+</main>
+<footer><span>Reedah's</span><span>© 2026 Reedah's. Made with love in Lagos.</span></footer>
 <aside id="cart" class="cart-panel" aria-hidden="true"><div class="cart-top"><h3>Your bag</h3><button onclick="closeCart()">×</button></div><div id="cartItems"></div><div class="cart-bottom"><div><span>Total</span><strong id="cartTotal">₦0</strong></div><button class="primary full" onclick="checkout()">Continue to WhatsApp →</button></div></aside><div id="overlay" class="overlay" onclick="closeCart()"></div>
 <div id="checkoutModal" class="checkout-modal" aria-hidden="true"><div class="checkout-box"><div class="checkout-head"><h3>Complete your order</h3><button onclick="closeCheckout()">×</button></div><p class="checkout-note">Tell us where and how you'd like to receive your order. Your details will be sent to Reedah's on WhatsApp.</p><label>Full name<input id="customerName" type="text" placeholder="Your name" autocomplete="name"></label><label>Phone number<input id="customerPhone" type="tel" placeholder="080..." autocomplete="tel"></label><label>Receive your order<select id="fulfilment" onchange="toggleAddress()"><option value="Delivery">Delivery</option><option value="Pickup">Pickup</option></select></label><label id="addressWrap">Delivery address<textarea id="customerAddress" rows="3" placeholder="House number, street, area, Lagos"></textarea></label><label>Preferred time<input id="orderTime" type="text" placeholder="e.g. 6–9 PM"></label><label>Payment method<select id="payment"><option>Transfer</option><option>Cash on delivery</option><option>Other — confirm on WhatsApp</option></select></label><div class="checkout-summary"><span>Order total</span><strong id="checkoutTotal">₦0</strong></div><button class="primary full" onclick="sendOrderToWhatsApp()">Send order on WhatsApp →</button></div></div>
-<script src="script.js"></script></body></html>
+<script src="script.js"></script>
+</body></html>
